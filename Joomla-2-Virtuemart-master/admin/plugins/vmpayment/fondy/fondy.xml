@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmpayment" >
+    <name>VMPAYMENT_FONDY</name>
+    <creationDate>APRIL 2014</creationDate>
+    <author>Fondy</author>
+    <authorUrl>http://fondy.eu</authorUrl>
+    <copyright>Fondy</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>1.0.0</version>
+    <description>Fondy payment plugin</description>
+    <languages>
+	<language tag="ru-RU">ru-RU.plg_vmpayment_fondy.ini</language>
+	<language tag="en-GB">en-GB.plg_vmpayment_fondy.ini</language>
+    </languages>
+    <files>
+	<filename plugin="standard">fondy.php</filename>
+    </files>
+
+	
+	<params addpath="/administrator/components/com_virtuemart/elements">
+	<param type="vmjpluginwarning" />
+
+	<param name="FONDY_MERCHANT" type="text" label="VMPAYMENT_FONDY_FONDY_MERCHANT" description="VMPAYMENT_FONDY_FONDY_MERCHANT_EXPLAIN" />
+
+	<param name="FONDY_SECRET_KEY" type="text"  label="VMPAYMENT_FONDY_FONDY_SECRET_KEY" description="VMPAYMENT_FONDY_FONDY_SECRET_KEY_EXPLAIN" />
+	
+	<param name="FONDY_COUNTRY" type="list" default="1" label="VMPAYMENT_FONDY_COUNTRY" description="VMPAYMENT_FONDY_COUNTRY_EXPLAIN">
+		<option value="UA">Украина</option>
+		<option value="RU">Россия</option>
+	</param>
+
+	<param name="FONDY_SYSTEM_CURRENCY" type="list" default="0" label="VMPAYMENT_FONDY_FONDY_SYSTEM_CURRENCY" description="VMPAYMENT_FONDY_FONDY_SYSTEM_CURRENCY_EXPLAIN">
+		<option value="1">Да</option>
+		<option value="0">Нет</option>
+	</param>
+
+	<param name="FONDY_LANGUAGE" type="list" default="RU" label="VMPAYMENT_FONDY_FONDY_LANGUAGE" description="VMPAYMENT_FONDY_FONDY_LANGUAGE_EXPLAIN">
+		<option value="RU">Русский</option>
+		<option value="EN">Английский</option>
+		<option value="TR">Турецкий</option>
+		<option value="RO">Румынский</option>
+		<option value="HU">Венгерский</option>
+		<option value="DE">Немецкий</option>
+		<option value="FR">Французский</option>
+		<option value="IT">Итальянский</option>
+		<option value="ES">Испанский</option>
+	</param>
+
+	<field name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_FONDY_STATUS_PENDING" description="VMPAYMENT_FONDY_STATUS_PENDING_EXPLAIN" />
+
+	<field name="status_success" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_FONDY_STATUS_SUCCESS" description="VMPAYMENT_FONDY_STATUS_SUCCESS_EXPLAIN" />
+	
+	</params>
+
+
+
+</install>
