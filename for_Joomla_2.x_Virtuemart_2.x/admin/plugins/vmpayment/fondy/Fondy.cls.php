@@ -11,34 +11,6 @@ class Fondy
 
     const URL = "https://api.fondy.eu/api/checkout/redirect/";
 
-    protected static $responseFields = array('rrn',
-                                             'masked_card',
-                                             'sender_cell_phone',
-                                             'response_status',
-                                             'currency',
-                                             'fee',
-                                             'reversal_amount',
-                                             'settlement_amount',
-                                             'actual_amount',
-                                             'order_status',
-                                             'response_description',
-                                             'order_time',
-                                             'actual_currency',
-                                             'order_id',
-                                             'tran_type',
-                                             'eci',
-                                             'settlement_date',
-                                             'payment_system',
-                                             'approval_code',
-                                             'merchant_id',
-                                             'settlement_currency',
-                                             'payment_id',
-                                             'sender_account',
-                                             'card_bin',
-                                             'response_code',
-                                             'card_type',
-                                             'amount',
-                                             'sender_email');
 
     public static function getSignature($data, $password, $encoded = true)
     {
@@ -67,15 +39,14 @@ class Fondy
             return 'An error has occurred during payment. Merchant data is incorrect.';
         }
 
-        $originalResponse = $response;
-        foreach ($response as $k => $v) {
-            if (!in_array($k, self::$responseFields)) {
-                unset($response[$k]);
-            }
-        }
-		$strs = explode(self::SIGNATURE_SEPARATOR,$originalResponse['response_signature_string']);
-        $str = (str_replace($strs[0],$fondySettings['secret_key'],$originalResponse['response_signature_string']));
-        if ((sha1($str)) != $originalResponse['signature']) {
+        $originalResponse = $response['signature'];
+		if (isset($response['response_signature_string'])){
+			unset($response['response_signature_string']);
+		}
+		if (isset($response['signature'])){
+			unset($response['signature']);
+		}
+		if (self::getSignature($response, $fondySettings['secret_key']) != $responseSignature) {
             return 'Signature is not valid' ;
         }
 
