@@ -34,6 +34,9 @@ class Fondy
         if ($response['order_status'] == self::ORDER_DECLINED) {
             return 'Order was declined.';
         }
+		if ($response['order_status'] != self::ORDER_APPROVED) {
+            return 'Order was not approv.';
+        }
 
         if ($fondySettings['merchant_id'] != $response['merchant_id']) {
             return 'An error has occurred during payment. Merchant data is incorrect.';
