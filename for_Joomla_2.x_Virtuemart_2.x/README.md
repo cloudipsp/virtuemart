@@ -1,10 +1,28 @@
 Fondy.eu
 -------
+#EN
+
+Module for Joomla 2.x Virtuemart 2.x 
+==========
+
+1. To install you need to download file from this repository (Preferably zip).
+
+2. Log in to your administration at http://yoursite/administrator. Go to the menu Extensions -> Extension Manager -> Install.
+
+3. Go to Components -> VirtueMart -> Payment Methods. Press ‘New’ in the top right corner, and enter your information. 
+
+4. Press ‘Save’ in the top right corner.
+
+5. Press ‘Configuration’ on the right. 
+
+6. Enter your Merchant ID, Secret Key and other fields and press 'Save'. (https://www.fondy.eu/ru/info/api/v1.0/2)
+
+----------
+
+#RU
 
 Модуль для Joomla 2.x Virtuemart 2.x 
 ==========
-
--------
 
 1. Для установки необходимо скачать архив этого репозитория (желательно zip)
 
@@ -17,4 +35,4 @@ Fondy.eu
 
 5. Перейдите на влкадку "Configuration"(Настройки)
 
-6. Заполните необходые поля скриншота и нажмите "Сохранить" (https://www.fondy.eu/ru/info/api/v1.0/2)
+6. Заполните необходые поля и нажмите "Сохранить" (https://www.fondy.eu/ru/info/api/v1.0/2)
